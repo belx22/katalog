@@ -1,0 +1,455 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block content %}
+
+<!--================End Footer Area =================-->
+
+<!--================Banner Area =================-->
+<section class="banner_area">
+    <div class="container">
+        <div class="banner_content">
+            <h4>Détaille sur la cité</h4>
+            <a href="cites.html">Rétouner à la liste</a>
+            
+        </div>
+    </div>
+</section>
+<!--================End Banner Area =================-->
+
+<!--================Blog List Area =================-->
+<section class="blog_list_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row m0">
+                    <div class="blog_details_inner">
+                        <div class="blog_details_content">
+                            <img src="{% static 'katalog/fond1.jpg' %}" alt="">
+                            <h3>Cité : {{ citer.libelle}}</h3>
+                            <div class="blog_details_tags_area">
+                                <div class="pull-left">
+                                        <h4>Posté par <a href="index.html">Katalogue</a>  le 21 Nov, 2019</h4>
+                                </div>
+                                <div class="pull-right">
+                                    <h4> Nombre de chambres disponible :</h4>
+                                    <ul class="social_icon2">
+                                        <li><a href="#chambre"><i class="fa fa" aria-hidden="true"></i>{{ citer.nbr_chmbr_dispo  }} </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+
+                            <h5>Description de la cité</h5>
+                            <p>{{ citer.Description}}</p> <br>
+
+                         
+                        </div><br>
+                        
+
+
+
+                        <div class="blog_details_part" id="chambre">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <img src=" {% static 'katalog/chambre1.jpg' %}" width="350" height="300" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <h3>Ses caracteristiques</h3><br>
+                                    <ul>
+                                        <li><a><i class="fa fa-chevron-right"></i>Surface :</a> <strong> 15 m² + Veranda</strong></li>
+                                        <li><a><i class="fa fa-chevron-right"></i>Douche interne :</a> <strong> Oui</strong></li>
+                                        <li><a><i class="fa fa-chevron-right"></i>Equipement :</a> <strong> Oui</strong></li>
+                                        <li><a><i class="fa fa-chevron-right"></i>Chambre N° </a> <strong> A 40 et A 41</strong></li>
+
+                                        <li><a><i class="fa fa-chevron-right"></i>Caution :</a> <strong> 30.000 Fcfa</strong></li>
+                                        <li><a><i class="fa fa-chevron-right"></i>Prix :</a> <strong> {{ chmbr.categorie }}</strong></li>
+
+                                        <li><a><i class="fa fa-chevron-right"></i>Contact :</a> <strong> Kénéwe Lamna Emmanuel</strong></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog_details_tags_area">
+                            <div class="pull-left">
+                                <button data-toggle="modal" href ="#reservation" class="btn btn-theme04" style="background-color: aliceblue;color: darkred; border:1px solid darkred; border-radius: 50px 50px 50px 50px;">Faire la réservation</button>
+                            </div>
+                            <div class="pull-right">
+                                <h4>Nos chaînes :</h4>
+                                <ul class="social_icon2">
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="comment_list_area">
+                            <h3>2 Commentaires</h3>
+                            <div class="media">
+                                <div class="media-left">
+                                    <img src="katalog/1.png" width="50" height="50" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <h4>Prodip Ghosh</h4>
+                                    <h5>Feb 28, 2017</h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                                    <a class="event_btn" href="#">Rép...</a>
+                                </div>
+                            </div>
+                            <div class="media comment_reply">
+                                <div class="media-left">
+                                        <img src="katalog/1.png" width="50" height="50" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <h4>Lisa Lieberman</h4>
+                                    <h5>Feb 28, 2017</h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                                    <a class="event_btn" href="#">Rép...</a>
+                                </div>
+                            </div>
+                            <div class="media">
+                                <div class="media-left">
+                                        <img src="katalog/1.png" width="50" height="50" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <h4>Sumon Rahman</h4>
+                                    <h5>Feb 28, 2017</h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                                    <a class="event_btn" href="#">Rép...</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment_form_area">
+                            <h3>Poster un commentaire </h3>
+                            <div class="row">
+                                <form>
+                                    <div class="form-group col-md-6">
+                                        <label for="name">Nom<span>*</span></label>
+                                        <input type="text" class="form-control" id="name">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="email">E-mail<span>*</span></label>
+                                        <input type="email" class="form-control" id="email">
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <label for="comment">Votre commentaire</label>
+                                        <textarea name="comment" id="comment" rows="1"></textarea>
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <button type="submit" class="btn btn-default submit_btn_bg">Poster</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                    <div class="blog_right_sidebar">
+                        <aside class="right_widget search_widget">
+                            <form >
+                                <div class="input-group">
+                                
+                                    <input type="text" class="form-control" placeholder="Récherche approfondie">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+                                    </span>
+
+                                </div>
+                            </form>
+                        </aside>
+                        <aside class="right_widget category_widget">
+                            <div class="sidebar_title">
+                                <h3>Categories</h3>
+                            </div>
+                            <ul>
+                                <li><a href="#"><i class="fa fa-chevron-right"></i>Equipé (130)</a></li>
+                                <li><a href="#"><i class="fa fa-chevron-right"></i>Non équipé (450)</a></li>
+                                <li><a href="#"><i class="fa fa-chevron-right"></i>Sécurisé (19)</a></li>
+                                <li><a href="#"><i class="fa fa-chevron-right"></i>Non sécurisé (1024)</a></li>
+                                <li><a href="#"><i class="fa fa-chevron-right"></i>En famille (40)</a></li>
+                                <li><a href="#"><i class="fa fa-chevron-right"></i>En chantier (Beaucoup)</a></li>
+                                
+                            </ul>
+                        </aside>
+
+
+
+                        <aside class="right_widget calender_widget">
+                           <div class="sidebar_title">
+                                <h3>Notre calendrier des événements</h3>
+                            </div>
+                            <div id="my-calendar"></div>
+                        </aside>
+
+
+                        <aside class="right_widget category_widget">
+                            <div class="sidebar_title">
+                                <h3>Nos archives</h3>
+                            </div>
+                            <ul>
+                                <li><a href="#"><i class="fa fa-chevron-right"></i>Septembre 2019</a></li>
+                                <li><a href="#"><i class="fa fa-chevron-right"></i>Août 2019</a></li>
+                                <li><a href="#"><i class="fa fa-chevron-right"></i>Juillet 2019</a></li>
+                                <li><a href="#"><i class="fa fa-chevron-right"></i>Juin 2019</a></li>
+                            </ul>
+                        </aside>
+                        <aside class="right_widget recent_widget">
+                            <div class="sidebar_title">
+                                <h3>Les commentaires récents</h3>
+                            </div>
+                            <div class="media">
+                                <div class="media-left">
+                                    <img src="{% static 'img/blog/recent-post/recent-post-1.jpg' %}" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <a href="#"><h4>Tailgating with Simon's Cheese: Bratwurst and Sauerkraut Pizza Recipe.</h4></a>
+                                    <h5>November 18, 2017</h5>
+                                </div>
+                            </div>
+                            <div class="media">
+                                <div class="media-left">
+                                    <img src="img/blog/recent-post/recent-post-2.jpg" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <a href="#"><h4>Tailgating with Simon's Cheese: Bratwurst and Sauerkraut Pizza Recipe.</h4></a>
+                                    <h5>November 18, 2017</h5>
+                                </div>
+                            </div>
+                            <div class="media">
+                                <div class="media-left">
+                                    <img src="img/blog/recent-post/recent-post-3.jpg" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <a href="#"><h4>Tailgating with Simon's Cheese: Bratwurst and Sauerkraut Pizza Recipe.</h4></a>
+                                    <h5>November 18, 2017</h5>
+                                </div>
+                            </div>
+                        </aside>
+                        <aside class="right_widget tags_widget">
+                            <div class="sidebar_title">
+                                <h3>Nos parténaires</h3>
+                            </div>
+                            <ul>
+                                <li><a href="#">Restaurant " Mama Maiga "</a></li>
+                                <li><a href="#">Touristique Express</a></li>
+                                <li><a href="#">Les Boukarous</a></li>
+                                <li><a href="#">Hôtel PAKEM</a></li>
+                                <li><a href="#">Bon Prix</a></li>
+                            </ul>
+                        </aside>
+                    </div>
+                </div>
+        </div>
+    </div>
+</section>
+<!--================End Blog List Area =================-->
+
+
+<!--================Connexion espace =================-->
+<div class="container">
+        <div class="col-lg-4 col-lg-offset-4">
+            <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="boite" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="false">&times;</button>
+                            <h4 class="modal-title">Connexion</h4>
+                        </div>
+                        <div class="modal-body">
+
+                            <form class="form-login" action="index.html">
+                                <div class="login-wrap">
+
+                                    <input type="text" class="form-control" placeholder="Identifiant"
+                                    style="text-align: center; color: darkred; border:1px solid darkred; border-radius: 50px 50px 0px 0px;" autofocus>
+                                    <br>
+
+                                    <input type="password" class="form-control" placeholder="Mot de passe"
+                                    style="text-align: center; color: darkred; border:1px solid darkred; border-radius: 0px 0px 50px 50px;">
+                                    
+                                    <span class="pull-right">
+                                    <a data-toggle="modal" href="index.html#myModal"> Mot de passe oublié?</a>
+                                    </span>
+                                    </label>
+                                    <button class="btn btn-theme btn-block" style="background-color: darkred;color: aliceblue; border:1px solid aliceblue; border-radius: 50px 50px 50px 50px;" href="index.html" type="submit"><i class="fa fa-sign-in"></i> Se connecter</button>
+                                    <hr>
+                                    
+                                    <div class="registration">
+                                    Vous n'avez pas de compte ?
+                                    <a data-toggle="modal" href="index.html#inscription">
+                                        Créer un compte
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                            </form>
+                        
+                            
+                        </div>
+                        <div class="modal-footer centered">
+                            <button data-dismiss="modal" class="btn btn-theme04" style="background-color: aliceblue;color: darkred; border:1px solid darkred; border-radius: 50px 50px 50px 50px;">Tout annuler</button>
+                        </div>
+                          
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--================Connexion espace =================-->
+
+    <div class="container">
+        <div class="col-lg-4 col-lg-offset-4">
+             <!-- Mot de passe perdu -->
+            <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">Vous avez oublié votre mot de passe ?</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Alors entrez votre adresse e-mail.</p>
+                            <input type="text" name="email" placeholder="E-mail" autocomplete="off" class="form-control placeholder-no-fix"
+                            style="text-align: center; color: darkred; border:1px solid darkred; border-radius: 50px 50px 50px 50px;">
+                        </div>
+                        
+                        <div class="modal-footer centered">
+                            <button data-dismiss="modal" class="btn btn-theme04" style="color: darkred; border:1px solid darkred; border-radius: 50px 50px 50px 50px;" type="button">Annuler</button>
+                            
+                            <button class="btn btn-theme04" style="background-color: #a34141;color: aliceblue; border:1px solid aliceblue; border-radius: 50px 50px 50px 50px;" type="submit">Confirmer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- mot de passe perdu -->
+        </div>
+    </div>
+
+
+    <!--================Récherche espace =================-->
+
+    <div class="container">
+            <div class="col-lg-4 col-lg-offset-4">
+                <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="recherche" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="false">&times;</button>
+                                <h4 class="modal-title">Vous désirez faire une récherche rapide, il suffit de renseigne le champs ci-déssous 
+                                    par un mot !
+                                </h4>
+                            </div><br>
+                            <form action="#">
+                                <div class="modal-body">
+                                
+                                    <input type="text" name="mot" placeholder="Entrer un mot" autocomplete="off" class="form-control placeholder-no-fix"
+                                    style="text-align: center; color: darkred; border:1px solid darkred; border-radius: 50px 50px 50px 50px;"><br>
+                                    
+                                
+                                </div>
+                                <div class="modal-footer centered">
+                                    <button data-dismiss="modal" class="btn btn-theme04" style="color: darkred; border:1px solid darkred; border-radius: 50px 50px 50px 50px;" type="button">Annuler</button>
+                                    
+                                    <button class="btn btn-theme04" style="background-color: #a34141;color: aliceblue; border:1px solid aliceblue; border-radius: 50px 50px 50px 50px;" type="submit">Chercher</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+   
+    <!--================Récherche espace =================-->
+
+<!--================inscription espace =================-->
+<div class="container">
+        <div class="col-lg-4 col-lg-offset-4">
+            <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="inscription" class="modal fade">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="false">&times;</button>
+                            <h4 class="modal-title">Créer un compte</h4>
+                        </div>
+                        <div class="modal-body">
+
+                            <form class="form-login" action="index.html">
+                                <div class="login-wrap">
+
+                                    <input type="text" class="form-control" style="text-align: center; color: darkred; border:1px solid darkred; border-radius: 50px 50px 0px 0px;" placeholder="Votre nom et prénom" autofocus><br>
+                                    <input type="email" class="form-control" style="text-align: center; color: darkred; border:1px solid darkred; border-radius: 0px 0px 50px 50px;" placeholder="Votre adresse e-mail" autofocus><br>
+                                    <input type="tel" class="form-control" style="text-align: center; color: darkred; border:1px solid darkred; border-radius: 50px 50px 0px 0px;" placeholder="Votre numéro de téléphone" autofocus><br>
+                                    <select type="text" class="form-control" style="text-align: center; color: darkred; border:1px solid darkred; border-radius: 0px 0px 50px 50px;"  autofocus>
+                                        <option value="0">Etudiant</option>
+                                        <option value="1">Enseignant</option>
+                                        <option value="2">Touriste</option>
+                                    
+                                    <select><br>
+                                    
+                                    <input type="password" class="form-control" style="text-align: center; color: darkred; border:1px solid darkred; border-radius: 50px 50px 0px 0px;" placeholder="Mot de passe"><br>
+                                    <input type="password_confirm" class="form-control" style="text-align: center; color: darkred; border:1px solid darkred; border-radius: 0px 0px 50px 50px;" placeholder="Confirmer ce mot de passe"> <br><br>
+                                    
+                                    
+                                    </label>
+                                    <button class="btn btn-theme btn-block" href="index.html" type="submit" style="background-color: #a34141;color: aliceblue; border:1px solid rgb(247, 242, 242); border-radius: 50px 50px 50px 50px;"><i class="fa fa-save"></i> Sauvegarder</button>
+                                   
+                                    
+                                
+                                </div>
+                                
+                            </form>
+                        
+                            
+                        </div>
+                        <div class="modal-footer centered">
+                            <button data-dismiss="modal" class="btn btn-theme04" style="background-color: aliceblue;color: darkred; border:1px solid darkred; border-radius: 50px 50px 50px 50px;" type="button">Tout annuler</button>
+                        </div>
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--================inscription espace =================-->
+
+    <div class="container">
+            <div class="col-lg-4 col-lg-offset-4">
+                <form method="POST">
+
+                
+                 <!-- Confirmation reservations -->
+                <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="reservation" class="modal fade">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" align="center"> Veuillez confirmer votre Reservation ?</h4>
+                            </div>
+                            <div class="modal-body">
+                                
+                                <input type="text" name="password" placeholder="Entrez votre Mot de Pass" autocomplete="off" class="form-control placeholder-no-fix"
+                                style="text-align: center; color: darkred; border:1px solid darkred; border-radius: 50px 50px 50px 50px;">
+                            </div>
+                            
+                            <div class="modal-footer centered">
+                                <button data-dismiss="modal" class="btn btn-theme04" style="color: darkred; border:1px solid darkred; border-radius: 50px 50px 50px 50px;" type="button">Annuler</button>
+                                
+                                <button class="btn btn-theme04" style="background-color: #a34141;color: aliceblue; border:1px solid aliceblue; border-radius: 50px 50px 50px 50px;" name="confirm_reservation" type="submit">Confirmer</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- mot de passe perdu -->
+            </div>
+        </form>
+        </div>
+
+           
+
+{% endblock content %}
