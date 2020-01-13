@@ -71,3 +71,4 @@ def contact(request):
     
     # Quoiqu'il arrive, on affiche la page du formulaire.
     return render(request, 'testes.html', {'form':form})
+
