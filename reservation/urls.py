@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 
+
 app_name = 'reservation'
 from reservation.views import home
 urlpatterns = [
@@ -16,3 +17,4 @@ urlpatterns = [
     
    
 ]
+

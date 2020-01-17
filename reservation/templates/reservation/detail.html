@@ -73,8 +73,12 @@
                         </div>
                         <div class="blog_details_tags_area">
                             <div class="pull-left">
-                                <button data-toggle="modal" href ="#reservation" class="btn btn-theme04" style="background-color: aliceblue;color: darkred; border:1px solid darkred; border-radius: 50px 50px 50px 50px;">Faire la réservation</button>
-                            </div>
+                                <form method="POST" action="/testes/">
+                                    {% csrf_token %}
+                                    <button  type="submit" data-toggle="modal"  class="btn btn-theme04" style="background-color: aliceblue;color: darkred; border:1px solid darkred; border-radius: 50px 50px 50px 50px;">Faire la réservation</button>
+                       
+                                </form>
+                                    </div>
                             <div class="pull-right">
                                 <h4>Nos chaînes :</h4>
                                 <ul class="social_icon2">
@@ -417,13 +421,13 @@
     </div>
 
     <!--================inscription espace =================-->
-
+<!--
     <div class="container">
             <div class="col-lg-4 col-lg-offset-4">
-                <form method="POST">
+                <form method="POST" action="testes/">
 
                 
-                 <!-- Confirmation reservations -->
+                  Confirmation reservations 
                 <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="reservation" class="modal fade">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -445,10 +449,10 @@
                         </div>
                     </div>
                 </div>
-                <!-- mot de passe perdu -->
+                 
             </div>
         </form>
-        </div>
+        </div>-->
 
            
 

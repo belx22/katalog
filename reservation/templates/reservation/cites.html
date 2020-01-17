@@ -29,7 +29,10 @@
                     <article class="blog_list_item row m0">
                         <div class="col-md-6">
                             <div class="blog_list_img">
-                                <img src="{% static 'katalog/fond1.jpg' %}" alt="">
+                           
+                                {% if objcite.image %}
+                                <img src="{{objcite.image.url}}" alt="">{% endif %}
+                                
                             </div>
                         </div>
                         <div class="col-md-6">
