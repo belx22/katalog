@@ -6,6 +6,7 @@ app_name = 'reservation'
 from reservation.views import home
 urlpatterns = [
     path('',home),
+    path('update/<int:pk>/',views.update, name='update'),
     path('cites',views.cites, name="cites"),
    # path('cites/detail',views.detail, name="detail"),
     path('cites/<int:cite_id>/',views.detail,name="detail"),

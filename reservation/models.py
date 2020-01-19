@@ -10,6 +10,7 @@ class Cite(models.Model):
     image = models.ImageField(default='20190805_112608jpg' ,null=True,blank=True)
     description = models.TextField()
     nbr_chmbr_dispo = models.IntegerField()
+    prix = models.IntegerField()
 
     def __str__(self):
         return self.libelle

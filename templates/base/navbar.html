@@ -1,3 +1,4 @@
+{% load crispy_forms_tags %}
 {% load static %}
 
 <div id="preloader">
@@ -21,10 +22,21 @@
           <div class="col-md-4">
               <div class="event_btn_inner">
                  
-                  <a class="event_btn" href="reservation"><i class="fa fa-calendar" aria-hidden="true"></i>Résérvation </a>
-                  
-                  <a class="event_btn" data-toggle="modal" href="#boite"><i class="fa fa-sign-in" aria-hidden="true"></i>Se connecter</a>
-                  
+                   
+                {% if request.user.is_authenticated  %}
+                     <form method="POST" action="/logout/" >
+                        {% csrf_token %}
+                     <button type="submit" class="event_btn" data-toggle="modal" href="#boite"><i class="fa fa-sign-in" aria-hidden="true"></i>Se deconnecter</a>
+                     </form>
+                {% else  %}
+                <form method="POST" action="/login/" >
+                    {% csrf_token %}
+                   
+                    <button type="submit" class="event_btn" data-toggle="modal" ><i class="fa fa-sign-in" aria-hidden="true"></i>Se connecter</button>   
+                </form>
+                       {% endif %}
+                
+               
               </div>
           </div>
           <div class="col-md-4">
