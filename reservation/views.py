@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render,get_object_or_404,redirect
-from .models import Cite, Chambre
+from .models import Cite, Chambre, Commentaire
 from .forms import ContactForm,  UserProfileInfoForm
 from django.urls import reverse
 
@@ -29,7 +29,7 @@ def cites(request):
 #page pour lister les details des cite
 def detail(request, cite_id):
     cite = get_object_or_404(Cite, pk=cite_id)
-    chmbr = Chambre.objects.all()
+    chmbr = get_object_or_404(Chambre,  pk=cite_id)
     return render (request, 'reservation/detail.html', { 'citer': cite , 'chmbre' : chmbr})
 
 #page de recherche specifique d'une cite par certains critère
@@ -57,6 +57,15 @@ def update(request, pk):
     obj.nbr_chmbr_dispo -= 1
     obj.save() 
     return redirect(reverse('reservation:detail',kwargs={'cite_id':pk}))
+
+def comment(request, pk):
+    obj = get_object_or_404(Commentaire)
+    if request.method == 'POST':
+        obj.message = username = request.POST.get('message')
+    obj.save()
+
+    return redirect(reverse('reservation:detail',{'cite_id':pk}))
+
 
 
  #les formulaires

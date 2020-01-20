@@ -11,6 +11,7 @@ class Cite(models.Model):
     description = models.TextField()
     nbr_chmbr_dispo = models.IntegerField()
     prix = models.IntegerField()
+    contact = models.IntegerField(default=694216755)
 
     def __str__(self):
         return self.libelle
@@ -22,6 +23,7 @@ class Categorie(models.Model):
     cloturer = models.BooleanField(default=False)
     equipement = models.BooleanField(default=False)
     create_at = models.DateTimeField(auto_now=False,auto_now_add=True)
+    caution = models.prix = models.CharField(default="10000", max_length=50)
 
     def __str__(self):
         return " chambres  de %s  " % self.prix 
@@ -31,7 +33,7 @@ class Categorie(models.Model):
 class Chambre(models.Model):
     
     libelle = models.CharField(max_length=50)
-    #image = mdoels.ImageField( blank=True)
+    image = models.ImageField(default='20190805_112608jpg' ,null=True,blank=True)
     description = models.TextField()
     cite     = models.ForeignKey(Cite,on_delete=models.CASCADE)
     categorie = models.ForeignKey(Categorie,on_delete=models.CASCADE)
